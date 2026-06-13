@@ -340,6 +340,7 @@
 }
 
 .avatar-ring-outer {
+  border-radius: 9999px;
   box-shadow: 0 0 30px 8px rgba(79, 209, 255, 0.12),
     0 0 60px 16px rgba(167, 139, 250, 0.08);
 }
