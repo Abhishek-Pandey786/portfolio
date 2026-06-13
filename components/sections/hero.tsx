@@ -146,17 +146,19 @@ export function HeroSection() {
         <Reveal delay={0.15} direction="right">
           <div className="flex flex-col items-center gap-6">
             {/* Profile Avatar */}
-            <div className="avatar-ring-outer">
-              <div className="avatar-ring">
-                <Image
-                  src="/profile.jpeg"
-                  alt={`${siteConfig.name} profile photo`}
-                  width={180}
-                  height={180}
-                  quality={100}
-                  className="rounded-full object-cover"
-                  style={{ width: 180, height: 180 }}
-                />
+            <div className="relative flex items-center justify-center rounded-full shadow-[0_0_30px_8px_rgba(79,209,255,0.12),0_0_60px_16px_rgba(167,139,250,0.08)]">
+              <div className="rounded-full bg-gradient-to-br from-cyan-400 via-violet-400 to-cyan-400 p-[3px] animate-[avatar-glow_4s_ease-in-out_infinite] bg-[length:300%_300%]">
+                <div className="relative h-[180px] w-[180px] overflow-hidden rounded-full bg-black/20">
+                  <Image
+                    src="/profile.jpeg"
+                    alt={`${siteConfig.name} profile photo`}
+                    fill
+                    sizes="180px"
+                    priority
+                    quality={100}
+                    className="object-cover"
+                  />
+                </div>
               </div>
             </div>
 

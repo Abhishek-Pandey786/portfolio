@@ -331,20 +331,6 @@
   }
 }
 
-.avatar-ring {
-  background: linear-gradient(135deg, #4fd1ff, #a78bfa, #4fd1ff, #a78bfa);
-  background-size: 300% 300%;
-  animation: avatar-glow 4s ease-in-out infinite;
-  padding: 3px;
-  border-radius: 9999px;
-}
-
-.avatar-ring-outer {
-  border-radius: 9999px;
-  box-shadow: 0 0 30px 8px rgba(79, 209, 255, 0.12),
-    0 0 60px 16px rgba(167, 139, 250, 0.08);
-}
-
 /* ── Reduced motion ──────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   html {
