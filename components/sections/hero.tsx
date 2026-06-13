@@ -68,29 +68,10 @@ export function HeroSection() {
         {/* Left — Identity */}
         <Reveal>
           <div className="flex flex-col gap-5">
-            {/* Avatar + Status row */}
-            <div className="flex items-center gap-4">
-              <div className="avatar-ring-outer shrink-0">
-                <div className="avatar-ring">
-                  <Image
-                    src="/profile.jpeg"
-                    alt={`${siteConfig.name} profile photo`}
-                    width={72}
-                    height={72}
-                    className="rounded-full object-cover"
-                    style={{ width: 72, height: 72 }}
-                  />
-                </div>
-              </div>
-              <div className="flex flex-col gap-1">
-                <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.4em] text-white/50">
-                  <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.6)]" />
-                  Available for opportunities
-                </div>
-                <p className="text-sm text-white/40">{siteConfig.location}</p>
-              </div>
+            <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.4em] text-white/50">
+              <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.6)]" />
+              Available for opportunities
             </div>
-
             <h1 className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
               <span className="gradient-text">{siteConfig.name}</span>
             </h1>
@@ -161,26 +142,44 @@ export function HeroSection() {
           </div>
         </Reveal>
 
-        {/* Right — Stats */}
+        {/* Right — Avatar + Stats */}
         <Reveal delay={0.15} direction="right">
-          <div className="grid grid-cols-2 gap-3">
-            {siteConfig.stats.map((stat, i) => (
-              <HoverCard
-                key={stat.label}
-                glowColor={i === 0 ? "cyan" : "white"}
-              >
-                <div
-                  className={`rounded-2xl border p-5 transition-colors ${
-                    i === 0
-                      ? "border-cyan-400/20 bg-cyan-400/5"
-                      : "border-white/10 bg-white/[0.03]"
-                  }`}
+          <div className="flex flex-col items-center gap-6">
+            {/* Profile Avatar */}
+            <div className="avatar-ring-outer">
+              <div className="avatar-ring">
+                <Image
+                  src="/profile.jpeg"
+                  alt={`${siteConfig.name} profile photo`}
+                  width={180}
+                  height={180}
+                  quality={100}
+                  className="rounded-full object-cover"
+                  style={{ width: 180, height: 180 }}
+                />
+              </div>
+            </div>
+
+            {/* Stats grid */}
+            <div className="grid w-full grid-cols-2 gap-3">
+              {siteConfig.stats.map((stat, i) => (
+                <HoverCard
+                  key={stat.label}
+                  glowColor={i === 0 ? "cyan" : "white"}
                 >
-                  <p className="text-2xl font-bold text-white">{stat.value}</p>
-                  <p className="mt-1.5 text-xs text-white/50">{stat.label}</p>
-                </div>
-              </HoverCard>
-            ))}
+                  <div
+                    className={`rounded-2xl border p-5 transition-colors ${
+                      i === 0
+                        ? "border-cyan-400/20 bg-cyan-400/5"
+                        : "border-white/10 bg-white/[0.03]"
+                    }`}
+                  >
+                    <p className="text-2xl font-bold text-white">{stat.value}</p>
+                    <p className="mt-1.5 text-xs text-white/50">{stat.label}</p>
+                  </div>
+                </HoverCard>
+              ))}
+            </div>
           </div>
         </Reveal>
       </div>
