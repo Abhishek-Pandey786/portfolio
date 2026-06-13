@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowUpRight,
   Link2,
@@ -67,10 +68,29 @@ export function HeroSection() {
         {/* Left — Identity */}
         <Reveal>
           <div className="flex flex-col gap-5">
-            <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.4em] text-white/50">
-              <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.6)]" />
-              Available for opportunities
+            {/* Avatar + Status row */}
+            <div className="flex items-center gap-4">
+              <div className="avatar-ring-outer shrink-0">
+                <div className="avatar-ring">
+                  <Image
+                    src="/profile.jpeg"
+                    alt={`${siteConfig.name} profile photo`}
+                    width={72}
+                    height={72}
+                    className="rounded-full object-cover"
+                    style={{ width: 72, height: 72 }}
+                  />
+                </div>
+              </div>
+              <div className="flex flex-col gap-1">
+                <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.4em] text-white/50">
+                  <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.6)]" />
+                  Available for opportunities
+                </div>
+                <p className="text-sm text-white/40">{siteConfig.location}</p>
+              </div>
             </div>
+
             <h1 className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
               <span className="gradient-text">{siteConfig.name}</span>
             </h1>

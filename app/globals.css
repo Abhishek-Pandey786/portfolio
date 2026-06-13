@@ -318,6 +318,32 @@
   animation: cta-glow 3s ease-in-out infinite;
 }
 
+/* ── Avatar glow ring ────────────────────────────────────────── */
+@keyframes avatar-glow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.avatar-ring {
+  background: linear-gradient(135deg, #4fd1ff, #a78bfa, #4fd1ff, #a78bfa);
+  background-size: 300% 300%;
+  animation: avatar-glow 4s ease-in-out infinite;
+  padding: 3px;
+  border-radius: 9999px;
+}
+
+.avatar-ring-outer {
+  box-shadow: 0 0 30px 8px rgba(79, 209, 255, 0.12),
+    0 0 60px 16px rgba(167, 139, 250, 0.08);
+}
+
 /* ── Reduced motion ──────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -326,7 +352,8 @@
   .glow-pulse,
   .shimmer-sweep::before,
   .timeline-circle-pulse::after,
-  .cta-pulse {
+  .cta-pulse,
+  .avatar-ring {
     animation: none;
   }
   .section-divider {
